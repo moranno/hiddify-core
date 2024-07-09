@@ -9,7 +9,6 @@ require (
 	github.com/golang/protobuf v1.5.4
 	github.com/hiddify/ray2sing v0.0.0-20240620091605-2d6d49ad762d
 	github.com/kardianos/service v1.2.2
-	github.com/macronut/godivert v0.0.0-20220121081532-78e5dd672daf
 	github.com/sagernet/gomobile v0.1.3
 	github.com/sagernet/sing v0.4.1
 	github.com/sagernet/sing-box v1.8.9
@@ -74,7 +73,7 @@ require (
 	github.com/sagernet/cloudflare-tls v0.0.0-20231208171750-a4483c1b7cd1 // indirect
 	github.com/sagernet/gvisor v0.0.0-20240428053021-e691de28565f // indirect
 	github.com/sagernet/netlink v0.0.0-20240523065131-45e60152f9ba // indirect
-	github.com/sagernet/quic-go v0.43.1-beta.2 // indirect
+	github.com/sagernet/quic-go v0.45.1-beta.2 // indirect
 	github.com/sagernet/reality v0.0.0-20230406110435-ee17307e7691 // indirect
 	github.com/sagernet/sing-mux v0.2.0 // indirect
 	github.com/sagernet/sing-quic v0.2.0-beta.5 // indirect
@@ -91,25 +90,30 @@ require (
 	github.com/spf13/pflag v1.0.5 // indirect
 	github.com/u-root/uio v0.0.0-20230220225925-ffce2a382923 // indirect
 	github.com/vishvananda/netns v0.0.0-20211101163701-50045581ed74 // indirect
-	github.com/williamfhe/godivert v0.0.0-20181229124620-a48c5b872c73 // indirect
 	github.com/zeebo/blake3 v0.2.3 // indirect
 	go.uber.org/multierr v1.11.0 // indirect
 	go.uber.org/zap v1.27.0 // indirect
 	go4.org/netipx v0.0.0-20231129151722-fdeea329fbba // indirect
-	golang.org/x/crypto v0.23.0 // indirect
-	golang.org/x/exp v0.0.0-20240506185415-9bf2ced13842 // indirect
-	golang.org/x/mod v0.17.0 // indirect
-	golang.org/x/net v0.25.0 // indirect
+	golang.org/x/crypto v0.24.0 // indirect
+	golang.org/x/exp v0.0.0-20240604190554-fc45aab8b7f8 // indirect
+	golang.org/x/mod v0.18.0 // indirect
+	golang.org/x/net v0.26.0 // indirect
 	golang.org/x/sync v0.7.0 // indirect
-	golang.org/x/text v0.15.0 // indirect
+	golang.org/x/text v0.16.0 // indirect
 	golang.org/x/time v0.5.0 // indirect
-	golang.org/x/tools v0.21.0 // indirect
+	golang.org/x/tools v0.22.0 // indirect
 	google.golang.org/genproto/googleapis/rpc v0.0.0-20240228224816-df926f6c8641 // indirect
 	lukechampine.com/blake3 v1.2.1 // indirect
 )
 
-replace github.com/sagernet/sing-box => github.com/hiddify/hiddify-sing-box v1.8.9-0.20240706093344-3f72481ef84c
+//replace github.com/sagernet/sing-box => github.com/hiddify/hiddify-sing-box v1.8.9-0.20240706093344-3f72481ef84c
+
+replace github.com/bepass-org/warp-plus => github.com/hiddify/warp-plus v0.0.0-20240529120935-6c534fdb70b1
 
 replace github.com/sagernet/wireguard-go => github.com/hiddify/wireguard-go v0.0.0-20240302132803-629b7c39b487
 
-replace github.com/bepass-org/warp-plus => github.com/hiddify/warp-plus v0.0.0-20240529120935-6c534fdb70b1
+replace github.com/sagernet/sing-box => github.com/moranno/hiddify-sing-box v1.8.9-0.20240708050951-9a8eeaaf21e2
+
+replace github.com/sagernet/sing-quic => github.com/morgenanno/sing-quic v0.2.0-hopbeta.2
+
+replace github.com/xmdhs/clash2singbox => github.com/purofle/clash2singbox v0.0.0-20240423183826-f616ab980a02
