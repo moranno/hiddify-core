@@ -308,6 +308,13 @@ func BuildConfig(opt ConfigOptions, input option.Options) (*option.Options, erro
 			},
 		)
 
+		if opt.UseProfileDns {
+			options.DNS = input.DNS
+		}
+
+		if opt.UseProfileRoute {
+			options.Route = input.Route
+		}
 	}
 
 	for _, rule := range opt.Rules {

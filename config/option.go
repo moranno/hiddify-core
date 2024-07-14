@@ -15,11 +15,13 @@ type ConfigOptions struct {
 	BlockAds         bool   `json:"block-ads"`
 	// GeoIPPath        string      `json:"geoip-path"`
 	// GeoSitePath      string      `json:"geosite-path"`
-	Rules     []Rule      `json:"rules"`
-	Warp      WarpOptions `json:"warp"`
-	Warp2     WarpOptions `json:"warp2"`
-	Mux       MuxOptions  `json:"mux"`
-	TLSTricks TLSTricks   `json:"tls-tricks"`
+	Rules           []Rule      `json:"rules"`
+	Warp            WarpOptions `json:"warp"`
+	Warp2           WarpOptions `json:"warp2"`
+	Mux             MuxOptions  `json:"mux"`
+	TLSTricks       TLSTricks   `json:"tls-tricks"`
+	UseProfileDns   bool        `json:"use-profile-dns"`
+	UseProfileRoute bool        `json:"use-profile-route"`
 	DNSOptions
 	InboundOptions
 	URLTestOptions
