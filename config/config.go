@@ -465,13 +465,13 @@ func setFakeDns(options *option.Options, opt *ConfigOptions) {
 			},
 		)
 
-		if opt.UseProfileDns {
-			options.DNS = input.DNS
-		}
+		/* 		if opt.UseProfileDns {
+		   			options.DNS = input.DNS
+		   		}
 
-		if opt.UseProfileRoute {
-			options.Route = input.Route
-		}
+		   		if opt.UseProfileRoute {
+		   			options.Route = input.Route
+		   		} */
 	}
 }
 
