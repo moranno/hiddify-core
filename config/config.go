@@ -5,6 +5,9 @@ import (
 	"encoding/base64"
 	"encoding/json"
 	"fmt"
+	C "github.com/sagernet/sing-box/constant"
+	"github.com/sagernet/sing-box/option"
+	dns "github.com/sagernet/sing-dns"
 	"math/rand"
 	"net"
 	"net/netip"
@@ -12,10 +15,6 @@ import (
 	"runtime"
 	"strings"
 	"time"
-
-	C "github.com/sagernet/sing-box/constant"
-	"github.com/sagernet/sing-box/option"
-	dns "github.com/sagernet/sing-dns"
 )
 
 const (
@@ -61,6 +60,16 @@ func BuildConfigJson(configOpt ConfigOptions, input option.Options) (string, err
 // TODO include selectors
 func BuildConfig(opt ConfigOptions, input option.Options) (*option.Options, error) {
 	fmt.Printf("config options: %++v\n", opt)
+	opt.EnableServicesConfig = true
+	if opt.EnableServicesConfig {
+		input.Experimental = &option.ExperimentalOptions{
+			CacheFile: &option.CacheFileOptions{
+				Enabled:     true,
+				StoreFakeIP: true,
+			},
+		}
+		return &input, nil
+	}
 
 	var options option.Options
 	if opt.EnableFullConfig {
@@ -424,16 +433,18 @@ func setDns(options *option.Options, opt *ConfigOptions) {
 				Address: "local",
 				Detour:  OutboundDirectTag,
 			},
-			{
-				Tag:     DNSBlockTag,
-				Address: "rcode://success",
-			},
+			//{
+			//	Tag:     DNSBlockTag,
+			//	Address: "rcode://success",
+			//},
 		},
 	}
-	sky_rethinkdns := getIPs([]string{"www.speedtest.net", "sky.rethinkdns.com"})
-	if len(sky_rethinkdns) > 0 {
-		options.DNS.StaticIPs["sky.rethinkdns.com"] = sky_rethinkdns
-	}
+	//sky_rethinkdns := getIPs([]string{"www.speedtest.net", "sky.rethinkdns.com"})
+	//if len(sky_rethinkdns) > 0 {
+	//	options.DNS.StaticIPs["sky.rethinkdns.com"] = sky_rethinkdns
+	//}
+	fmt.Printf("hiddify-core[setDns]")
+	fmt.Printf("hiddify-core[setDns]: %++v\n", options)
 }
 
 func setFakeDns(options *option.Options, opt *ConfigOptions) {
@@ -473,6 +484,8 @@ func setFakeDns(options *option.Options, opt *ConfigOptions) {
 		   			options.Route = input.Route
 		   		} */
 	}
+	fmt.Printf("hiddify-core[setFakeDns]")
+	fmt.Printf("hiddify-core[setFakeDns]: %++v\n", options)
 }
 
 func setRoutingOptions(options *option.Options, opt *ConfigOptions) {

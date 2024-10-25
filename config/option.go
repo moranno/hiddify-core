@@ -27,6 +27,7 @@ type ConfigOptions struct {
 	InboundOptions
 	URLTestOptions
 	RouteOptions
+	EnableServicesConfig bool `json:"enable-services-config"`
 }
 
 type DNSOptions struct {
