@@ -60,7 +60,6 @@ func BuildConfigJson(configOpt ConfigOptions, input option.Options) (string, err
 // TODO include selectors
 func BuildConfig(opt ConfigOptions, input option.Options) (*option.Options, error) {
 	fmt.Printf("config options: %++v\n", opt)
-	opt.EnableServicesConfig = true
 	if opt.EnableServicesConfig {
 		input.Experimental = &option.ExperimentalOptions{
 			CacheFile: &option.CacheFileOptions{

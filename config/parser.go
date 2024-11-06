@@ -52,6 +52,7 @@ func ParseConfigContent(contentstr string, debug bool, configOpt *ConfigOptions,
 					jsonObj["outbounds"] = tmpJsonObj["outbounds"]
 					jsonObj["dns"] = tmpJsonObj["dns"]
 					jsonObj["route"] = tmpJsonObj["route"]
+					jsonObj["inbounds"] = tmpJsonObj["inbounds"]
 				}
 
 			}
